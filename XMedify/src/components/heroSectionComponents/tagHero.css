@@ -1,0 +1,12 @@
+.tag{
+    display: flex;
+    flex-direction: column;
+}
+
+.tagContainer{
+    width: 570px;
+    height: 207px;
+    margin-top: 70px;
+    margin-left: 105px;
+
+}
