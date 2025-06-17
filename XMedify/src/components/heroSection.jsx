@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./heroSectionComponents/navbar/navbar";
 import TopBanner from "./heroSectionComponents/topBanner";
-import TagHero from "./heroSectionComponents/tagHero";
+import TagHero from "./heroSectionComponents/tagHero/tagHero";
 
 export default function HeroSection() {
   return (
@@ -9,7 +9,7 @@ export default function HeroSection() {
       className="heroContainer"
       style={{
         width: "100vw",
-        height: "832px",
+        height: "830px",
         backgroundImage: "linear-gradient(47deg, #E7F0FF, #E8F1FF78)",
       }}
     >
