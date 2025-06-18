@@ -49,7 +49,7 @@ export default function TagHero() {
             </p>
           </div>
           <div style={{ display: "flex", marginTop: "20px" }}>
-            <button style={{ backgroundColor: "#2AA7FF" }}>Find Centers</button>
+            <button style={{ backgroundColor: "#2AA7FF", color: 'white' }}>Find Centers</button>
           </div>
         </div>
         <div className="imageContainer">

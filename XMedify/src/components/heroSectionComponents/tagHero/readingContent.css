@@ -1,0 +1,23 @@
+.readingContent {
+  width: 560px;
+  height: 375px;
+  text-align: start;
+}
+
+.content {
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 70px;
+  display: flex;
+}
+
+.points div p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.points div span {
+  display: flex;
+}

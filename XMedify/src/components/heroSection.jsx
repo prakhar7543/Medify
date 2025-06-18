@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./heroSectionComponents/navbar/navbar";
 import TopBanner from "./heroSectionComponents/topBanner";
 import TagHero from "./heroSectionComponents/tagHero/tagHero";
+import TagHeroSpecialisation from './heroSectionComponents/tagHero/tagHeroSpecialisation';
 
 export default function HeroSection() {
   return (
@@ -16,6 +17,7 @@ export default function HeroSection() {
       <TopBanner />
       <Navbar />
       <TagHero />
+      <TagHeroSpecialisation />
     </div>
   );
 }
