@@ -2,6 +2,8 @@ import React from "react";
 import ReadingContent from "./readingContent";
 import BlogsNews from "./blogs&news";
 import "./tagHeroSpecialisation.css";
+import Description from "./description";
+import FAQs from "./faq";
 import denistry from "../../../assets/denistry.png";
 import primarycare from "../../../assets/primarycare.png";
 import cardiology from "../../../assets/cardiology.png";
@@ -87,6 +89,12 @@ export default function TagHeroSpecialisation() {
         </div>
         <div className="blogs&newsContent">
              <BlogsNews />
+        </div>
+        <div className="descriptionContent">
+          <Description />
+        </div>
+        <div className="FaqContainer">
+          <FAQs />
         </div>
       </div>
     </div>
