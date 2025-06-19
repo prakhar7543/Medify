@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "./heroSectionComponents/navbar/navbar";
 import TopBanner from "./heroSectionComponents/topBanner";
-import TagHero from "./heroSectionComponents/tagHero/tagHero";
-import TagHeroSpecialisation from './heroSectionComponents/tagHero/tagHeroSpecialisation';
+import TagHero from "./heroSectionComponents/tagHero.jsx/tagHero";
+import TagHeroSpecialisation from './heroSectionComponents/tagHero.jsx/tagHeroSpecialisation';
+import BookingsNavbar from "../bookingsPage/tabsNavbar";
 
 export default function HeroSection() {
   return (
@@ -14,10 +15,12 @@ export default function HeroSection() {
         backgroundImage: "linear-gradient(47deg, #E7F0FF, #E8F1FF78)",
       }}
     >
-      <TopBanner />
+      {/* <TopBanner />
       <Navbar />
       <TagHero />
-      <TagHeroSpecialisation />
+      <TagHeroSpecialisation /> */}
+      <TopBanner />
+      <BookingsNavbar />
     </div>
   );
 }

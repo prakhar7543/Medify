@@ -30,3 +30,15 @@ export default function TopBanner() {
     </div>
   );
 }
+
+
+
+
+
+//  <Tab label="Find Doctors" {...a11yProps(0)} />
+//           <Tab label="Hospitals" {...a11yProps(1)} />
+//           <Tab label="Medicines" {...a11yProps(2)} />
+//           <Tab label="Surgeries" {...a11yProps(2)} />
+//           <Tab label="Software for Provider" {...a11yProps(2)} />
+//           <Tab label="Facilities" {...a11yProps(2)} />
+//         </Tabs> 
