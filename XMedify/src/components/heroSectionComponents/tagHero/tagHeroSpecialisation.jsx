@@ -4,6 +4,8 @@ import BlogsNews from "./blogs&news";
 import "./tagHeroSpecialisation.css";
 import Description from "./description";
 import FAQs from "./faq";
+import PlayStore from "./playStore";
+import AboutUs from "./aboutUs";
 import denistry from "../../../assets/denistry.png";
 import primarycare from "../../../assets/primarycare.png";
 import cardiology from "../../../assets/cardiology.png";
@@ -96,6 +98,8 @@ export default function TagHeroSpecialisation() {
         <div className="FaqContainer">
           <FAQs />
         </div>
+        <PlayStore />
+        <AboutUs />
       </div>
     </div>
   );
