@@ -3,6 +3,7 @@
   height: 96px;
   background-color: white;
   /* overflow-x: hidden; */
+  position: relative;
 }
 
 .navbar {

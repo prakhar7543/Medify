@@ -1,0 +1,39 @@
+.hospitalCard {
+  width: 786px;
+  height: 270px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hospitalDetails {
+  width: 487px;
+  height: 220px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.details {
+  text-align: start;
+}
+
+.hospitalDetails img {
+  object-fit: none;
+  object-position: center;
+}
+
+.availability {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.address p{
+    margin: unset;
+    font-weight: 700;
+    font-size: 14px;
+}

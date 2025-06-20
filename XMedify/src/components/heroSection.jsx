@@ -4,6 +4,7 @@ import TopBanner from "./heroSectionComponents/topBanner";
 import TagHero from "./heroSectionComponents/tagHero.jsx/tagHero";
 import TagHeroSpecialisation from './heroSectionComponents/tagHero.jsx/tagHeroSpecialisation';
 import BookingsNavbar from "../bookingsPage/tabsNavbar";
+import BookingsHeroSection from "../bookingsPage/bookingsHeroSection";
 
 export default function HeroSection() {
   return (
@@ -11,7 +12,7 @@ export default function HeroSection() {
       className="heroContainer"
       style={{
         width: "100vw",
-        height: "830px",
+        height: "100%",
         backgroundImage: "linear-gradient(47deg, #E7F0FF, #E8F1FF78)",
       }}
     >
@@ -21,6 +22,7 @@ export default function HeroSection() {
       <TagHeroSpecialisation /> */}
       <TopBanner />
       <BookingsNavbar />
+      <BookingsHeroSection />
     </div>
   );
 }
