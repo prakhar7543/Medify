@@ -1,0 +1,64 @@
+.morningSlot button{
+    border: 1px solid #2AA7FF;
+    color: #2AA7FF;
+    background-color: white;
+    height: 45px;
+   /* padding-left: 10px; */
+}
+
+.morningSlot{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+}
+
+.morningSlot p{
+    /* padding-left: 10px; */
+    /* padding-right: 5px; */
+    width: 100px;
+    text-align: center;
+    /* height: 40px; */
+}
+
+.afternoonSlot button{
+    border: 1px solid #2AA7FF;
+    color: #2AA7FF;
+    background-color: white;
+    height: 45px;
+}
+
+.afternoonSlot{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+}
+
+.afternoonSlot p{
+    /* padding-left: 10px; */
+    width: 100px;
+    text-align: center;
+}
+
+
+.eveningSlot button{
+    border: 1px solid #2AA7FF;
+    color: #2AA7FF;
+    background-color: white;
+    height: 45px;
+}
+
+.eveningSlot{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+}
+
+.eveningSlot p{
+    /* padding-left: 10px;
+    padding-right: 5px; */
+    width: 100px;
+    text-align: center;
+}

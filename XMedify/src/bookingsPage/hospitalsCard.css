@@ -1,7 +1,12 @@
 .hospitalCard {
   width: 786px;
-  height: 270px;
+  height: 100%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardDetails {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -32,8 +37,38 @@
   padding-bottom: 60px;
 }
 
-.address p{
-    margin: unset;
-    font-weight: 700;
-    font-size: 14px;
+.address p {
+  margin: unset;
+  font-weight: 700;
+  font-size: 14px;
 }
+
+.expandedDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* 
+.expandedContainer {
+  width: 740px;
+  background-color: #f5f8ff;
+  border-radius: 10px;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.slotButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.slotGroup > p {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
+} */
