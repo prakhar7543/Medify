@@ -28,6 +28,13 @@
   justify-content: space-between;
 }
 
+.socialMediaIcons {
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .aboutCompany {
   width: 230px;
   height: 235px;

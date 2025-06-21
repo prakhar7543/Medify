@@ -18,7 +18,7 @@ export default function AboutUs() {
           alt="medify"
           style={{ width: "126px", height: "36px" }}
         />
-        <div>
+        <div className="socialMediaIcons">
           <img
             src={facebook}
             alt="media"

@@ -5,6 +5,7 @@ import TagHero from "./heroSectionComponents/tagHero.jsx/tagHero";
 import TagHeroSpecialisation from './heroSectionComponents/tagHero.jsx/tagHeroSpecialisation';
 import BookingsNavbar from "../bookingsPage/tabsNavbar";
 import BookingsHeroSection from "../bookingsPage/bookingsHeroSection";
+import MyBookings from "../bookingsPage/myBookings";
 
 export default function HeroSection() {
   return (
@@ -20,9 +21,10 @@ export default function HeroSection() {
       <Navbar />
       <TagHero />
       <TagHeroSpecialisation /> */}
-      <TopBanner />
+      {/* <TopBanner />
       <BookingsNavbar />
-      <BookingsHeroSection />
+      <BookingsHeroSection /> */}
+      <MyBookings/>
     </div>
   );
 }

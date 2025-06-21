@@ -49,8 +49,8 @@ export default function ExpandedHospitalCard() {
                     alignItems: "center",
                   }}
                 >
-                  <span>Today</span>
-                  <span>11 Slots Available</span>
+                  <span style={{fontSize: '16px', fontWeight: '700', color: '#414146'}}>Today</span>
+                  <span style={{fontSize: '12px', fontWeight: '400', color: '#01A400'}}>11 Slots Available</span>
                 </div>
               }
               value="1"
@@ -64,8 +64,8 @@ export default function ExpandedHospitalCard() {
                     alignItems: "center",
                   }}
                 >
-                  <span>Tommorrow</span>
-                  <span>17 Slots Available</span>
+                  <span style={{fontSize: '16px', fontWeight: '700', color: '#414146'}}>Tomorrow</span>
+                  <span style={{fontSize: '12px', fontWeight: '400', color: '#01A400'}}>17 Slots Available</span>
                 </div>
               }
               value="2"
@@ -79,8 +79,8 @@ export default function ExpandedHospitalCard() {
                     alignItems: "center",
                   }}
                 >
-                  <span>Friday, 5 May</span>
-                  <span>18 Slots Available</span>
+                  <span style={{fontSize: '16px', fontWeight: '700', color: '#414146'}}>Friday, 5 May</span>
+                  <span style={{fontSize: '12px', fontWeight: '400', color: '#01A400'}}>18 Slots Available</span>
                 </div>
               }
               value="3"

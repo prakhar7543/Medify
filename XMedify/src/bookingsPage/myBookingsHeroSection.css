@@ -1,0 +1,32 @@
+.myBookingsHeroContainer {
+  background-image: linear-gradient(47deg, #e7f0ff, #e8f1ff78);
+  width: 100%;
+  /* height: 100%; */
+  padding-top: 250px;
+}
+
+.myBookingsmainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.myBookingsofferCard {
+  width: 363px;
+  height: 268px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.myBookingsofferCard img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+
+.myBookingsPageFaq {
+  /* position: relative;
+  bottom: -80px; */
+  margin-top: 90px;
+}

@@ -1,0 +1,36 @@
+.myBookingsNavbarContainer {
+  width: 100%;
+  height: 96px;
+  background-color: white;
+  /* overflow-x: hidden; */
+  position: relative;
+}
+
+.myBookingsnavbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* .navbar ul {
+  display: flex;
+  width: 800px;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+} */
+
+.myBookingstabs{
+    display: flex;
+    width: 978px;
+
+}
+
+.myBookingstabs button{
+    height: 40px;
+    width: 130px;
+    font-size: small;
+}
+

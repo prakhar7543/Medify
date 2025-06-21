@@ -1,51 +1,53 @@
-.hospitalCard {
+.myBookingshospitalCard {
   width: 786px;
-  height: 100%;
+  height: 268px;
   background-color: white;
   display: flex;
   flex-direction: column;
+  border-radius: 15px;
 }
 
-.cardDetails {
-  display: flex;
-  align-items: center;
+.myBookingscardDetails {
+    display: flex;
+    align-items: center;
   justify-content: space-around;
 }
 
-.hospitalDetails {
+.myBookingshospitalDetails {
   width: 487px;
   height: 220px;
   display: flex;
   justify-content: space-around;
 }
 
-.details {
+.myBookingsdetails {
   text-align: start;
 }
 
-.hospitalDetails img {
+.myBookingshospitalDetails img {
   object-fit: none;
   object-position: center;
 }
 
-.availability {
+/* 
+.appointmentDate span{
+    
+} */
+
+/* .availability {
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: center;
   height: 220px;
   padding-bottom: 20px;
-}
+} */
 
-.address p {
+.myBookingsaddress p {
   margin: unset;
   font-weight: 700;
   font-size: 14px;
 }
 
-.expandedDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 

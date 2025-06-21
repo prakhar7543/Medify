@@ -19,6 +19,9 @@
     width: 100px;
     text-align: center;
     /* height: 40px; */
+    font-size: 14px;
+    font-weight: 400;
+    color: #414146;
 }
 
 .afternoonSlot button{
@@ -39,6 +42,9 @@
     /* padding-left: 10px; */
     width: 100px;
     text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #414146;
 }
 
 
@@ -61,4 +67,7 @@
     padding-right: 5px; */
     width: 100px;
     text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #414146;
 }
