@@ -2,7 +2,7 @@ import React from "react";
 import medifyIcon from "../assets/medifyIcon.png";
 import "./tabsNavbar.css";
 import TabsNavbar from "../components/tabs";
-import SearchBox from "./searchBox";
+import BookingSearchBox from "./bookingSearchBox";
 
 export default function BookingsNavbar() {
   return (
@@ -42,7 +42,7 @@ export default function BookingsNavbar() {
           borderBottomLeftRadius: "16px",
         }}
       ></div>
-      <SearchBox />
+      <BookingSearchBox />
     </div>
   );
 }

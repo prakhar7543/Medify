@@ -1,4 +1,4 @@
-.searchContainer {
+.BookingsearchContainer {
   height: 111px;
   max-width: 1170px;
   width: 100%;
@@ -15,13 +15,13 @@
   border-radius: 16px;
 }
 
-.searchBox {
+.BookingsearchBox {
   justify-content: space-evenly;
   /* margin-top: 18px; */
   align-items: center;
 }
 
-.inputWithIcon input {
+.BookinginputWithIcon input {
   width: 100%;
   height: 50px;
   padding-left: 35px; /* leaves space for icon */
@@ -32,12 +32,12 @@
   background-color: #fafbfe;
 }
 
-.inputWithIcon {
+.BookinginputWithIcon {
   position: relative;
   width: 285px;
 }
 
-.inputIcon {
+.BookinginputIcon {
   position: absolute;
   left: 10px;
   top: 50%;
