@@ -7,7 +7,7 @@ import FAQs from "../components/heroSectionComponents/tagHero.jsx/faq";
 import PlayStore from "../components/heroSectionComponents/tagHero.jsx/playStore";
 import AboutUs from "../components/heroSectionComponents/tagHero.jsx/aboutUs";
 
-export default function BookingsHeroSection() {
+export default function BookingsHeroSection({data}) {
   return (
     <div className="bookingsHeroContainer">
       <div className="heroHeader">
@@ -21,7 +21,7 @@ export default function BookingsHeroSection() {
             textAlign: "start",
           }}
         >
-          15 medical centers available in Alaska
+          `{data.length} medical centers available in {data.State}`
         </p>
         <p
           style={{
@@ -56,7 +56,7 @@ export default function BookingsHeroSection() {
         </p>
       </div>
       <div className="mainContent">
-        <HospitalsCard />
+        <HospitalsCard data={data} />
         <div className="offerCard">
           <img src={offerCard} alt="offerCard" />
         </div>

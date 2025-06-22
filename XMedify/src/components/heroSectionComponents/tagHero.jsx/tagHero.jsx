@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./tagHero.css";
 import hero_image from "../../../assets/hero_image.png";
 import button_search from "../../../assets/button_search.png";
@@ -18,6 +19,8 @@ export default function TagHero() {
     state: "",
     city: "",
   });
+
+  let navigate = useNavigate();
 
   let fetchStateData = async () => {
     let urlStates = "https://meddata-backend.onrender.com/states";
@@ -67,6 +70,16 @@ export default function TagHero() {
       city: city,
     }));
   };
+
+  let handleClick = () => {
+    if(selected.state && selected.city){
+    navigate('/availableCentersPage', {
+      state: {state: selected.state, city: selected.city},
+    });
+  }else{
+    alert('Enter state and city');
+  }
+  }
 
   return (
     <div className="outerContainer">
@@ -166,7 +179,7 @@ export default function TagHero() {
               ))}
             </select>
           </div>
-          <img src={button_search} alt="" />
+          <img src={button_search} alt="searchBtn" style={{cursor: 'pointer'}}  onClick={handleClick}/>
         </div>
         <p
           style={{

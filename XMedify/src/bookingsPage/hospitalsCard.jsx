@@ -4,13 +4,14 @@ import hospitalCard from "../assets/hospitalCard.png";
 import like from "../assets/like.png";
 import ExpandedHospitalCard from "./expandedPanel";
 
-export default function HospitalsCard() {
+export default function HospitalsCard({data}) {
   let [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="hospitalsCardContainer">
       <div className="hospitalCard">
         <div className="cardDetails">
+          
           <div className="hospitalDetails">
             <div>
               <img src={hospitalCard} alt="card" />
