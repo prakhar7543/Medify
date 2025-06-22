@@ -83,7 +83,7 @@ export default function TagHero() {
             fontSize: "20px",
             fontWeight: "500",
             textAlign: "center",
-            marginTop: "16px",
+            marginTop: "26px",
           }}
         >
           You may be looking for

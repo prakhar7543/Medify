@@ -17,14 +17,14 @@ export default function HeroSection() {
         backgroundImage: "linear-gradient(47deg, #E7F0FF, #E8F1FF78)",
       }}
     >
-      {/* <TopBanner />
+      <TopBanner />
       <Navbar />
       <TagHero />
-      <TagHeroSpecialisation /> */}
+      <TagHeroSpecialisation />
       {/* <TopBanner />
       <BookingsNavbar />
       <BookingsHeroSection /> */}
-      <MyBookings/>
+      {/* <MyBookings/> */}
     </div>
   );
 }

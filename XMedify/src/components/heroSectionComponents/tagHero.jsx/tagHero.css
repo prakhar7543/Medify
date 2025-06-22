@@ -5,6 +5,7 @@
 
 .tagContainer {
   display: flex;
+  background-image: linear-gradient(47deg, #E7F0FF, #E8F1FF78);
 }
 
 .headingContainer {
@@ -32,17 +33,20 @@
   } */
 
 .searchContainer {
-  height: 430px;
-  max-width: 1170px;
-  width: 100%;
-  margin: -200px auto;
-  position: relative;
-  background-color: white;
-  border: 1px solid #f0f0f0;
-  border-radius: 8px;
-  box-shadow: 6px 6px 35px 0px #1028511c;
-  padding: 30px;
-  box-sizing: border-box;
+      height: 430px;
+    max-width: 1170px;
+    width: 100%;
+    margin: -200px auto;
+    position: relative;
+    background-color: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 6px 6px 35px 0px #1028511c;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    top: -43px;
+    border-radius: 16px;
 }
 
 .searchBox {
