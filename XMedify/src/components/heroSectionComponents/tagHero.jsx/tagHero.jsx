@@ -1,17 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./tagHero.css";
 import hero_image from "../../../assets/hero_image.png";
 import button_search from "../../../assets/button_search.png";
 import Search from "../../../assets/Search.png";
-import Hospital from '../../../assets/Hospital.png'
-import Drugstore from '../../../assets/Drugstore.png'
-import Doctor from '../../../assets/Doctor.png'
-import Capsule from '../../../assets/Capsule.png'
-import Ambulance from '../../../assets/Ambulance.png'
-import offer1 from '../../../assets/offer1.jpg'
-import offer2 from '../../../assets/offer2.jpg'
+import Hospital from "../../../assets/Hospital.png";
+import Drugstore from "../../../assets/Drugstore.png";
+import Doctor from "../../../assets/Doctor.png";
+import Capsule from "../../../assets/Capsule.png";
+import Ambulance from "../../../assets/Ambulance.png";
+import offer1 from "../../../assets/offer1.jpg";
+import offer2 from "../../../assets/offer2.jpg";
 
 export default function TagHero() {
+  let [states, setStates] = useState([]);
+  let [cities, setCities] = useState([]);
+  let [selected, setSelected] = useState({
+    state: "",
+    city: "",
+  });
+
+  let fetchStateData = async () => {
+    let urlStates = "https://meddata-backend.onrender.com/states";
+
+    try {
+      let res1 = await fetch(urlStates);
+      let data1 = await res1.json();
+      console.log("states data", data1);
+      setStates(data1);
+    } catch (error) {
+      console.error("error in fetching states data");
+    }
+  };
+
+  let fetchCityData = async (state) => {
+    let urlCities = `https://meddata-backend.onrender.com/cities/${state}`;
+    try {
+      let res2 = await fetch(urlCities);
+      let data2 = await res2.json();
+      console.log("cities data", data2);
+      setCities(data2);
+    } catch (error) {
+      console.error("error in fetching cities data");
+    }
+  };
+
+  useEffect(() => {
+    fetchStateData();
+  }, []);
+
+  let handleStateChange = (e) => {
+    let state = e.target.value;
+    setSelected({
+      state: state,
+      city: "",
+    });
+
+    if (state) {
+      fetchCityData(state);
+    }
+  };
+
+  let handleCityChange = (e) => {
+    let city = e.target.value;
+    setSelected((prev) => ({
+      ...prev,
+      city: city,
+    }));
+  };
+
   return (
     <div className="outerContainer">
       <div className="tagContainer">
@@ -49,7 +105,9 @@ export default function TagHero() {
             </p>
           </div>
           <div style={{ display: "flex", marginTop: "20px" }}>
-            <button style={{ backgroundColor: "#2AA7FF", color: 'white' }}>Find Centers</button>
+            <button style={{ backgroundColor: "#2AA7FF", color: "white" }}>
+              Find Centers
+            </button>
           </div>
         </div>
         <div className="imageContainer">
@@ -70,11 +128,43 @@ export default function TagHero() {
         <div className="searchBox" style={{ display: "flex" }}>
           <div className="inputWithIcon">
             <img src={Search} alt="state" className="inputIcon" />
-            <input type="text" placeholder="State" />
+            <select
+              onChange={handleStateChange}
+              style={{
+                width: "220px",
+                height: "33px",
+                borderStyle: "none",
+                color: "#ABB6C7",
+                outlineStyle: 'none',
+              }}
+            >
+              <option value="">State</option>
+              {states.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="inputWithIcon">
             <img src={Search} alt="city" className="inputIcon" />
-            <input type="text" placeholder="City" />
+            <select
+              onChange={handleCityChange}
+              style={{
+                width: "220px",
+                height: "33px",
+                borderStyle: "none",
+                color: "#ABB6C7",
+                outlineStyle: 'none',
+              }}
+            >
+              <option value="">City</option>
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
           </div>
           <img src={button_search} alt="" />
         </div>
@@ -91,24 +181,24 @@ export default function TagHero() {
 
         <div className="category">
           <div>
-          <img src={Doctor} alt="img" />
-          <p>Doctor</p>
+            <img src={Doctor} alt="img" />
+            <p>Doctor</p>
           </div>
           <div>
-          <img src={Drugstore} alt="img" />
-          <p>Drugstore</p>
+            <img src={Drugstore} alt="img" />
+            <p>Drugstore</p>
           </div>
           <div>
-          <img src={Hospital} alt="img" />
-          <p>Hospital</p>
+            <img src={Hospital} alt="img" />
+            <p>Hospital</p>
           </div>
           <div>
-          <img src={Capsule} alt="img" />
-          <p>Capsule</p>
+            <img src={Capsule} alt="img" />
+            <p>Capsule</p>
           </div>
           <div>
-          <img src={Ambulance} alt="img" />
-          <p>Ambulance</p>
+            <img src={Ambulance} alt="img" />
+            <p>Ambulance</p>
           </div>
         </div>
       </div>
