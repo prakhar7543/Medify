@@ -11,7 +11,7 @@ export default function BookingsHeroSection({data, city}) {
   return (
     <div className="bookingsHeroContainer">
       <div className="heroHeader">
-        <p
+        {/* <p
           style={{
             fontSize: "24px",
             fontWeight: "500",
@@ -20,16 +20,20 @@ export default function BookingsHeroSection({data, city}) {
             paddingLeft: "142px",
             textAlign: "start",
           }}
-        >
-          {data.length} medical centers available in {city}
-        </p>
+        > */}
+          <h1 style={{  color: "black",
+            marginBottom: "unset",
+            paddingLeft: "142px",
+            textAlign: "start",}}>{data.length} medical centers available in {city}</h1>
+
+        {/* </p> */}
         <p
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
             paddingLeft: "125px",
-            marginTop: "unset",
+            marginTop: "15px",
           }}
         >
           <span>

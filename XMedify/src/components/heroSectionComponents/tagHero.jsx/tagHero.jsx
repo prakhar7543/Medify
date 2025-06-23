@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "./tagHero.css";
 import hero_image from "../../../assets/hero_image.png";
 import button_search from "../../../assets/button_search.png";
@@ -72,14 +72,14 @@ export default function TagHero() {
   };
 
   let handleClick = () => {
-    if(selected.state && selected.city){
-    navigate('/availableCentersPage', {
-      state: {state: selected.state, city: selected.city, states, cities},
-    });
-  }else{
-    alert('Enter state and city');
-  }
-  }
+    if (selected.state && selected.city) {
+      navigate("/availableCentersPage", {
+        state: { state: selected.state, city: selected.city, states, cities },
+      });
+    } else {
+      alert("Enter state and city");
+    }
+  };
 
   return (
     <div className="outerContainer">
@@ -141,47 +141,57 @@ export default function TagHero() {
         <div className="searchBox" style={{ display: "flex" }}>
           <div className="inputWithIcon">
             <img src={Search} alt="state" className="inputIcon" />
-            <select
-            id="state"
-              onChange={handleStateChange}
-              style={{
-                width: "220px",
-                height: "33px",
-                borderStyle: "none",
-                color: "#ABB6C7",
-                outlineStyle: 'none',
-              }}
-            >
-              <option value="">State</option>
-              {states.map((state) => (
-                <option key={state} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
+            <div id="state">
+              <select
+                onChange={handleStateChange}
+                value={selected.state}
+                style={{
+                  width: "220px",
+                  height: "33px",
+                  borderStyle: "none",
+                  color: "#ABB6C7",
+                  outlineStyle: "none",
+                }}
+              >
+                <option value="">State</option>
+                {states.map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
           <div className="inputWithIcon">
             <img src={Search} alt="city" className="inputIcon" />
-            <select
-            id="city"
-              onChange={handleCityChange}
-              style={{
-                width: "220px",
-                height: "33px",
-                borderStyle: "none",
-                color: "#ABB6C7",
-                outlineStyle: 'none',
-              }}
-            >
-              <option value="">City</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
+            <div id="city">
+              <select
+                onChange={handleCityChange}
+                value={selected.city}
+                style={{
+                  width: "220px",
+                  height: "33px",
+                  borderStyle: "none",
+                  color: "#ABB6C7",
+                  outlineStyle: "none",
+                }}
+              >
+                <option value="">City</option>
+                {cities.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-          <img src={button_search} alt="searchBtn" style={{cursor: 'pointer'}}  onClick={handleClick}/>
+          <img
+            id="searchBtn"
+            src={button_search}
+            alt="search"
+            onClick={handleClick}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <p
           style={{

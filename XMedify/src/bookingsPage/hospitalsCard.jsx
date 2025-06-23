@@ -48,18 +48,12 @@ export default function HospitalsCard({ data }) {
           </div>
 
           <div className="details">
-            <p
-              style={{
-                fontSize: '20px',
-                fontWeight: '600',
-                color: '#14BEF0',
+           
+              <h3 style={{color: '#14BEF0',
                 marginBottom: 'unset',
                 display: 'flex',
-                flexWrap: 'wrap',
-              }}
-            >
-              {item['Hospital Name']}
-            </p>
+                flexWrap: 'wrap',}}>{item['Hospital Name']}</h3>
+            
             <div className="address">
               <p>{item.Address}</p>
               <p style={{ fontWeight: '400', fontSize: '14px' }}>
