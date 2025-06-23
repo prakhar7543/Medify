@@ -1,10 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import medifyIcon from "../assets/medifyIcon.png";
 import "./tabsNavbar.css";
 import TabsNavbar from "../components/tabs";
 import BookingSearchBox from "./bookingSearchBox";
 
 export default function BookingsNavbar() {
+
+  let navigate = useNavigate();
+
+  let handleClick = () => {
+    navigate('/');
+  }
+
   return (
     <div className="navbarContainer">
       <div className="navbar">
@@ -16,7 +24,10 @@ export default function BookingsNavbar() {
             height: "27px",
             objectFit: "cover",
             objectPosition: "center",
+            cursor: 'pointer'
+
           }}
+          onClick={handleClick}
         />
         <div>
           <div className="tabs">

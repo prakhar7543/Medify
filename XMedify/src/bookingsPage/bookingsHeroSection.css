@@ -11,7 +11,7 @@
 .mainContent {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   gap: 20px;
 }
 
@@ -20,6 +20,11 @@
   height: 268px;
   background-color: white;
   border-radius: 15px;
+  display: flex;
+  position: relative;
+  bottom: -29px;
+  /* position: relative;
+  bottom: 1066px; */
 }
 
 .offerCard img {

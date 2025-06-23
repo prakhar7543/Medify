@@ -7,7 +7,7 @@ import FAQs from "../components/heroSectionComponents/tagHero.jsx/faq";
 import PlayStore from "../components/heroSectionComponents/tagHero.jsx/playStore";
 import AboutUs from "../components/heroSectionComponents/tagHero.jsx/aboutUs";
 
-export default function BookingsHeroSection({data}) {
+export default function BookingsHeroSection({data, city}) {
   return (
     <div className="bookingsHeroContainer">
       <div className="heroHeader">
@@ -17,18 +17,18 @@ export default function BookingsHeroSection({data}) {
             fontWeight: "500",
             color: "black",
             marginBottom: "unset",
-            paddingLeft: "105px",
+            paddingLeft: "142px",
             textAlign: "start",
           }}
         >
-          `{data.length} medical centers available in {data.State}`
+          {data.length} medical centers available in {city}
         </p>
         <p
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
-            paddingLeft: "100px",
+            paddingLeft: "125px",
             marginTop: "unset",
           }}
         >
@@ -36,22 +36,19 @@ export default function BookingsHeroSection({data}) {
             <img
               src={okTick}
               alt="ok"
-              style={{ width: "23px", height: "22px" }}
+              style={{ width: "23px", height: "22px", paddingTop: '7px' }}
             />
           </span>
-          <span>
-            <p
-              style={{
+          <span  style={{
                 width: "600px",
                 height: "24px",
                 color: "#787887",
                 display: "flex",
                 textAlign: "start",
                 paddingLeft: "25px",
-              }}
-            >
-              Book appointments with minimum wait-time & verified doctor details
-            </p>
+              }}>
+                Book appointments with minimum wait-time & verified doctor details
+          
           </span>
         </p>
       </div>

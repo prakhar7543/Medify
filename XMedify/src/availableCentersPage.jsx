@@ -31,7 +31,7 @@ export default function AvailableCentersPage() {
     <div style={{ height: "100vh", width: "100%" }}>
       <TopBanner />
       <BookingsNavbar />
-      <BookingsHeroSection data={data} />
+      <BookingsHeroSection data={data} city={city} />
     </div>
   );
 }

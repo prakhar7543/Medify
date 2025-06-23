@@ -1,22 +1,36 @@
 .hospitalCard {
   width: 786px;
-  height: 100%;
-  background-color: white;
+  /* height: 100%; */
+  /* background-color: white; */
   display: flex;
   flex-direction: column;
+  /* margin: 10px 0;  */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
 }
+
+.hospitalsCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Adds space between each card */
+  /* background-color: #f0f4f8;  */
+  padding: 20px; /* Optional: Adds padding around the container */
+}
+
 
 .cardDetails {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  display: flex;
+  flex-direction: column;
 }
 
 .hospitalDetails {
   width: 487px;
   height: 220px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .details {
@@ -48,4 +62,3 @@
   justify-content: center;
   align-items: center;
 }
-
