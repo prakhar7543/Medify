@@ -30,7 +30,12 @@ export default function AvailableCentersPage() {
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <TopBanner />
-      <BookingsNavbar states={states} cities={cities}/>
+      <BookingsNavbar
+        states={states}
+        cities={cities}
+        selectedState={state}
+        selectedCity={city}
+      />
       <BookingsHeroSection data={data} city={city} />
     </div>
   );
