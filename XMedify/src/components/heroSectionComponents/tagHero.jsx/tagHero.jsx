@@ -74,7 +74,7 @@ export default function TagHero() {
   let handleClick = () => {
     if(selected.state && selected.city){
     navigate('/availableCentersPage', {
-      state: {state: selected.state, city: selected.city},
+      state: {state: selected.state, city: selected.city, states, cities},
     });
   }else{
     alert('Enter state and city');
@@ -142,6 +142,7 @@ export default function TagHero() {
           <div className="inputWithIcon">
             <img src={Search} alt="state" className="inputIcon" />
             <select
+            id="state"
               onChange={handleStateChange}
               style={{
                 width: "220px",
@@ -162,6 +163,7 @@ export default function TagHero() {
           <div className="inputWithIcon">
             <img src={Search} alt="city" className="inputIcon" />
             <select
+            id="city"
               onChange={handleCityChange}
               style={{
                 width: "220px",

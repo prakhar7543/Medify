@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 export default function AvailableCentersPage() {
   let [data, setData] = useState([]);
   let location = useLocation();
-  let { state, city } = location.state;
+  let { state, city, states, cities } = location.state;
 
   let fetchHospitalData = async () => {
     try {
@@ -25,12 +25,12 @@ export default function AvailableCentersPage() {
 
   useEffect(() => {
     fetchHospitalData();
-  }, []);
+  }, [state, city]);
 
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <TopBanner />
-      <BookingsNavbar />
+      <BookingsNavbar states={states} cities={cities}/>
       <BookingsHeroSection data={data} city={city} />
     </div>
   );

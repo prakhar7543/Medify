@@ -5,7 +5,7 @@ import "./tabsNavbar.css";
 import TabsNavbar from "../components/tabs";
 import BookingSearchBox from "./bookingSearchBox";
 
-export default function BookingsNavbar() {
+export default function BookingsNavbar({states, cities}) {
 
   let navigate = useNavigate();
 
@@ -53,7 +53,7 @@ export default function BookingsNavbar() {
           borderBottomLeftRadius: "16px",
         }}
       ></div>
-      <BookingSearchBox />
+      <BookingSearchBox states={states} cities={cities}/>
     </div>
   );
 }
