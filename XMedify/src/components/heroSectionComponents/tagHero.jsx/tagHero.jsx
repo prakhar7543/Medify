@@ -19,8 +19,32 @@ export default function TagHero() {
     state: "",
     city: "",
   });
+  const [showStateDropdown, setShowStateDropdown] = useState(false);
+const [showCityDropdown, setShowCityDropdown] = useState(false);
 
   let navigate = useNavigate();
+
+  const dropdownStyle = {
+  position: 'relative',
+  display: 'inline-block',
+  width: '220px',
+  height: '33px',
+  border: '1px solid #ccc',
+  padding: '5px',
+  cursor: 'pointer'
+};
+
+const dropdownOptions = {
+  position: 'absolute',
+  top: '100%',
+  left: 0,
+  right: 0,
+  backgroundColor: 'white',
+  border: '1px solid #ccc',
+  zIndex: 1000,
+  maxHeight: '200px',
+  overflowY: 'auto'
+};
 
   let fetchStateData = async () => {
     let urlStates = "https://meddata-backend.onrender.com/states";
@@ -52,24 +76,26 @@ export default function TagHero() {
   }, []);
 
   let handleStateChange = (e) => {
-    let state = e.target.value;
-    setSelected({
-      state: state,
-      city: "",
-    });
+  let state = e.target.value;
+  setSelected({
+    state: state,
+    city: "",
+  });
 
-    if (state) {
-      fetchCityData(state);
-    }
-  };
+  if (state) {
+    fetchCityData(state);
+  }
+  setShowStateDropdown(false);
+};
 
   let handleCityChange = (e) => {
-    let city = e.target.value;
-    setSelected((prev) => ({
-      ...prev,
-      city: city,
-    }));
-  };
+  let city = e.target.value;
+  setSelected(prev => ({
+    ...prev,
+    city: city,
+  }));
+  setShowCityDropdown(false);
+};
 
   let handleClick = () => {
     if (selected.state && selected.city) {
@@ -141,49 +167,57 @@ export default function TagHero() {
         <div className="searchBox" style={{ display: "flex" }}>
           <div className="inputWithIcon">
             <img src={Search} alt="state" className="inputIcon" />
-            <div id="state">
-              <select
-                onChange={handleStateChange}
-                value={selected.state}
-                style={{
-                  width: "220px",
-                  height: "33px",
-                  borderStyle: "none",
-                  color: "#ABB6C7",
-                  outlineStyle: "none",
-                }}
-              >
-                <option value="">State</option>
-                {states.map((state) => (
-                  <option key={state} value={state}>
-                    {state}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <div 
+    id="state" 
+    style={dropdownStyle}
+    onClick={() => setShowStateDropdown(!showStateDropdown)}
+  >
+    {selected.state || 'State'}
+    {showStateDropdown && (
+      <div style={dropdownOptions}>
+        {states.map(state => (
+          <li 
+            key={state} 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleStateChange({ target: { value: state } });
+              setShowStateDropdown(false);
+            }}
+            style={{ padding: '8px', cursor: 'pointer' }}
+          >
+            {state}
+          </li>
+        ))}
+      </div>
+    )}
+  </div>
           </div>
           <div className="inputWithIcon">
             <img src={Search} alt="city" className="inputIcon" />
-            <div id="city">
-              <select
-                onChange={handleCityChange}
-                value={selected.city}
-                style={{
-                  width: "220px",
-                  height: "33px",
-                  borderStyle: "none",
-                  color: "#ABB6C7",
-                  outlineStyle: "none",
-                }}
-              >
-                <option value="">City</option>
-                {cities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <div 
+    id="city"
+    style={dropdownStyle}
+    onClick={() => setShowCityDropdown(!showCityDropdown)}
+  >
+    {selected.city || 'City'}
+    {showCityDropdown && (
+      <div style={dropdownOptions}>
+        {cities.map(city => (
+          <li 
+            key={city} 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleCityChange({ target: { value: city } });
+              setShowCityDropdown(false);
+            }}
+            style={{ padding: '8px', cursor: 'pointer' }}
+          >
+            {city}
+          </li>
+        ))}
+      </div>
+    )}
+  </div>
           </div>
           <img
             id="searchBtn"

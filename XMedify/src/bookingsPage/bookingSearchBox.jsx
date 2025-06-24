@@ -15,6 +15,8 @@ export default function BookingSearchBox({
     city: selectedCity,
   });
   const [cityList, setCityList] = useState([]);
+   const [showStateDropdown, setShowStateDropdown] = useState(false);
+  const [showCityDropdown, setShowCityDropdown] = useState(false);
 
   let navigate = useNavigate();
 
@@ -29,6 +31,28 @@ export default function BookingSearchBox({
       console.error("Error fetching cities in BookingSearchBox", error);
     }
   };
+
+    const dropdownStyle = {
+  position: 'relative',
+  display: 'inline-block',
+  width: '220px',
+  height: '33px',
+  border: '1px solid #ccc',
+  padding: '5px',
+  cursor: 'pointer'
+};
+
+const dropdownOptions = {
+  position: 'absolute',
+  top: '100%',
+  left: 0,
+  right: 0,
+  backgroundColor: 'white',
+  border: '1px solid #ccc',
+  zIndex: 1000,
+  maxHeight: '200px',
+  overflowY: 'auto'
+};
 
   useEffect(() => {
     setSelected({
@@ -88,49 +112,57 @@ export default function BookingSearchBox({
       <div className="BookingsearchBox" style={{ display: "flex" }}>
         <div className="BookinginputWithIcon">
           <img src={gps} alt="state" className="BookinginputIcon" />
-          <div id="state">
-            <select
-              onChange={handleStateChange}
-              value={selected.state}
-              style={{
-                width: "220px",
-                height: "33px",
-                borderStyle: "none",
-                color: "#ABB6C7",
-                outlineStyle: "none",
-              }}
-            >
-              <option value="">State</option>
-              {states.map((state) => (
-                <option key={state} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
-          </div>
+                  <div 
+    id="state" 
+    style={dropdownStyle}
+    onClick={() => setShowStateDropdown(!showStateDropdown)}
+  >
+    {selected.state || 'State'}
+    {showStateDropdown && (
+      <div style={dropdownOptions}>
+        {states.map(state => (
+          <li 
+            key={state} 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleStateChange({ target: { value: state } });
+              setShowStateDropdown(false);
+            }}
+            style={{ padding: '8px', cursor: 'pointer' }}
+          >
+            {state}
+          </li>
+        ))}
+      </div>
+    )}
+  </div>
         </div>
         <div className="BookinginputWithIcon">
           <img src={gps} alt="city" className="BookinginputIcon" />
-          <div id="city">
-            <select
-              onChange={handleCityChange}
-              value={selected.city}
-              style={{
-                width: "220px",
-                height: "33px",
-                borderStyle: "none",
-                color: "#ABB6C7",
-                outlineStyle: "none",
-              }}
-            >
-              <option value="">City</option>
-              {cityList.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
-          </div>
+           <div 
+    id="city"
+    style={dropdownStyle}
+    onClick={() => setShowCityDropdown(!showCityDropdown)}
+  >
+    {selected.city || 'City'}
+    {showCityDropdown && (
+      <div style={dropdownOptions}>
+        {cityList.map(city => (
+          <li 
+            key={city} 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleCityChange({ target: { value: city } });
+              setShowCityDropdown(false);
+            }}
+            style={{ padding: '8px', cursor: 'pointer' }}
+          >
+            {city}
+          </li>
+        ))}
+      </div>
+    )}
+  </div>
         </div>
         <img
           id="searchBtn"
