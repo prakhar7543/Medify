@@ -27,11 +27,12 @@ const [showCityDropdown, setShowCityDropdown] = useState(false);
   const dropdownStyle = {
   position: 'relative',
   display: 'inline-block',
-  width: '220px',
-  height: '33px',
+ width: '274px',
+    height: '24px',
   border: '1px solid #ccc',
   padding: '5px',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  listStyle: 'none',
 };
 
 const dropdownOptions = {
@@ -43,7 +44,8 @@ const dropdownOptions = {
   border: '1px solid #ccc',
   zIndex: 1000,
   maxHeight: '200px',
-  overflowY: 'auto'
+  overflowY: 'auto',
+  listStyle: 'none',
 };
 
   let fetchStateData = async () => {
@@ -74,6 +76,22 @@ const dropdownOptions = {
   useEffect(() => {
     fetchStateData();
   }, []);
+
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (!event.target.closest('#state')) {
+      setShowStateDropdown(false);
+    }
+    if (!event.target.closest('#city')) {
+      setShowCityDropdown(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, []);
 
   let handleStateChange = (e) => {
   let state = e.target.value;
