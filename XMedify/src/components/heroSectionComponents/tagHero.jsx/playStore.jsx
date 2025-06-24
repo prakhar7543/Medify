@@ -3,7 +3,7 @@ import "./playStore.css";
 import mobileBig from "../../../assets/mobileBig.png";
 // import mobileSmall from "../../../assets/mobileSmall.png";
 import mobileScreen from "../../../assets/mobileScreen.png";
-import vector from "../../../assets/vector.png";
+import Vector from "../../../assets/Vector.png";
 import googlePlay from "../../../assets/googlePlay.png";
 import appleStore from "../../../assets/appleStore.png";
 import countryCode from "../../../assets/countryCode.png";
@@ -68,7 +68,7 @@ export default function PlayStore() {
       </div>
 
       <img
-        src={vector}
+        src={Vector}
         alt="pic"
         style={{
           width: "56px",
