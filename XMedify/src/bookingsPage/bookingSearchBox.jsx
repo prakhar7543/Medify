@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function BookingSearchBox({
   states = [],
-  cities = [],
+
   selectedState = "",
   selectedCity = "",
 }) {
@@ -31,10 +31,17 @@ export default function BookingSearchBox({
   };
 
   useEffect(() => {
+    setSelected({
+      state: selectedState,
+      city: selectedCity,
+    });
+
     if (selectedState) {
-      fetchCities(selectedState).then((cities) => setCityList(cities));
+      fetchCities(selectedState).then((cities) => {
+        setCityList(cities);
+      });
     }
-  }, [selectedState]);
+  }, [selectedState, selectedCity]);
 
   let handleStateChange = async (e) => {
     let state = e.target.value;
@@ -117,7 +124,7 @@ export default function BookingSearchBox({
               }}
             >
               <option value="">City</option>
-              {cities.map((city) => (
+              {cityList.map((city) => (
                 <option key={city} value={city}>
                   {city}
                 </option>

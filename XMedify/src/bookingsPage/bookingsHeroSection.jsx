@@ -11,16 +11,7 @@ export default function BookingsHeroSection({data, city}) {
   return (
     <div className="bookingsHeroContainer">
       <div className="heroHeader">
-        {/* <p
-          style={{
-            fontSize: "24px",
-            fontWeight: "500",
-            color: "black",
-            marginBottom: "unset",
-            paddingLeft: "142px",
-            textAlign: "start",
-          }}
-        > */}
+       
           <h1 style={{  color: "black",
             marginBottom: "unset",
             paddingLeft: "142px",

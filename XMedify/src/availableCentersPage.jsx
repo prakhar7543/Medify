@@ -6,9 +6,21 @@ import { useLocation } from "react-router-dom";
 
 export default function AvailableCentersPage() {
   let [data, setData] = useState([]);
-  let location = useLocation();
-  let { state, city, states, cities } = location.state;
+  let [cities, setCities] = useState([]);
 
+  let location = useLocation();
+
+  // ✅ Rename 'cities' to navCities to avoid name clash
+  let { state, city, states, cities: navCities } = location.state;
+
+  // ✅ Set city list again when location.state changes
+  useEffect(() => {
+    if (navCities) {
+      setCities(navCities);
+    }
+  }, [location.state]);
+
+  // ✅ Fetch hospitals when state/city changes
   let fetchHospitalData = async () => {
     try {
       if (state && city) {
@@ -32,7 +44,7 @@ export default function AvailableCentersPage() {
       <TopBanner />
       <BookingsNavbar
         states={states}
-        cities={cities}
+        // cities={cities}
         selectedState={state}
         selectedCity={city}
       />

@@ -5,13 +5,16 @@ import "./tabsNavbar.css";
 import TabsNavbar from "../components/tabs";
 import BookingSearchBox from "./bookingSearchBox";
 
-export default function BookingsNavbar({states, cities}) {
-
+export default function BookingsNavbar({
+  states,
+  selectedState,
+  selectedCity,
+}) {
   let navigate = useNavigate();
 
   let handleClick = () => {
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <div className="navbarContainer">
@@ -24,8 +27,7 @@ export default function BookingsNavbar({states, cities}) {
             height: "27px",
             objectFit: "cover",
             objectPosition: "center",
-            cursor: 'pointer'
-
+            cursor: "pointer",
           }}
           onClick={handleClick}
         />
@@ -53,7 +55,11 @@ export default function BookingsNavbar({states, cities}) {
           borderBottomLeftRadius: "16px",
         }}
       ></div>
-      <BookingSearchBox states={states} cities={cities}/>
+      <BookingSearchBox
+        states={states}
+        selectedState={selectedState}
+        selectedCity={selectedCity}
+      />
     </div>
   );
 }
