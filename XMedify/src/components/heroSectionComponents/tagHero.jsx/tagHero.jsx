@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./tagHero.css";
 import hero_image from "../../../assets/hero_image.png";
-import button_search from "../../../assets/button_search.png";
+import searchBtn from '../../../assets/searchBtn.png';
+// import button_search from "../../../assets/button_search.png";
 import Search from "../../../assets/Search.png";
 import Hospital from "../../../assets/Hospital.png";
 import Drugstore from "../../../assets/Drugstore.png";
@@ -237,13 +238,32 @@ const dropdownOptions = {
     )}
   </div>
           </div>
-          <img
-            id="searchBtn"
-            src={button_search}
-            alt="search"
-            onClick={handleClick}
-            style={{ cursor: "pointer" }}
-          />
+
+         <button 
+  id="searchBtn"
+  onClick={handleClick}
+  style={{ 
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    padding: 0,
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#2AA8FF',
+    color: 'white',
+    height: '50px',
+    width: '120px',
+    justifyContent: 'center',
+  }}
+>
+  <img 
+    src={searchBtn}
+    alt="search"
+    style={{ width: '24px', height: '24px' }}
+  />
+  <span style={{ marginLeft: '8px' }}>Search</span>
+</button>
+
         </div>
         <p
           style={{

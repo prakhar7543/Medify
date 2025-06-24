@@ -15,7 +15,7 @@ export default function BookingsHeroSection({data, city}) {
           <h1 style={{  color: "black",
             marginBottom: "unset",
             paddingLeft: "142px",
-            textAlign: "start",}}>{data.length} medical centers available in {city}</h1>
+            textAlign: "start",}}>{data.length} medical centers available in {city.toLowerCase()}</h1>
 
         {/* </p> */}
         <p
