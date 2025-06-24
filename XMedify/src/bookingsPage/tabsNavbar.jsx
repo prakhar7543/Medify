@@ -10,7 +10,12 @@ export default function BookingsNavbar({
   selectedState,
   selectedCity,
 }) {
+  
   let navigate = useNavigate();
+
+  let handleMyBookings = () => {
+    navigate('/my-bookings')
+  }
 
   let handleClick = () => {
     navigate("/");
@@ -40,6 +45,7 @@ export default function BookingsNavbar({
                 borderRadius: "8px",
                 color: "white",
               }}
+              onClick={handleMyBookings}
             >
               My Bookings
             </button>

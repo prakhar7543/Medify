@@ -1,8 +1,16 @@
 import React from "react";
 import medifyIcon from "../../../assets/medifyIcon.png";
 import "./navbar.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+
+  let navigate = useNavigate();
+
+  let handleMyBookings = () => {
+    navigate('/my-bookings')
+  }
+
   return (
     <div className="navbarContainer">
       <div className="navbar">
@@ -25,7 +33,16 @@ export default function Navbar() {
             <li>Software for Provider</li>
             <li>Facilities</li>
             <li>
-              <button style={{backgroundColor: '#2AA8FF', borderRadius: '8px', color: 'white'}}>My Bookings</button>
+              <button
+                style={{
+                  backgroundColor: "#2AA8FF",
+                  borderRadius: "8px",
+                  color: "white",
+                }}
+                onClick={handleMyBookings}
+              >
+                My Bookings
+              </button>
             </li>
           </ul>
         </div>

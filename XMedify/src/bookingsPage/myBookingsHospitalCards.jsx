@@ -4,7 +4,7 @@ import hospitalCard from "../assets/hospitalCard.png";
 import like from "../assets/like.png";
 // import ExpandedHospitalCard from "./expandedPanel";
 
-export default function MyBookingsHospitalsCard() {
+export default function MyBookingsHospitalsCard({booking}) {
   //   let [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -25,12 +25,12 @@ export default function MyBookingsHospitalsCard() {
                   marginBottom: "unset",
                 }}
               >
-                Fortis Hospital Richmond Road
+                {booking['hospitalName']}
               </p>
               <div className="myBookingsaddress">
-                <p>Banglore, Karnataka</p>
+                <p>{booking['address']}</p>
                 <p style={{ fontWeight: "400", fontSize: "14px" }}>
-                  Smilessence Center for Advanced Dentistry + 1
+                  {booking['hospitalType']}
                 </p>
                 <p style={{ fontWeight: "400", fontSize: "14px" }}>more</p>
               </div>
@@ -58,7 +58,7 @@ export default function MyBookingsHospitalsCard() {
                   borderRadius: '5px',
                 }}
               >
-                10:30 AM
+                {booking['time']}
               </span>
               <span
                 style={{
@@ -69,7 +69,7 @@ export default function MyBookingsHospitalsCard() {
                   borderRadius: '5px',
                 }}
               >
-                20 April 2024
+                {booking['date']}
               </span>
             </p>
           </div>

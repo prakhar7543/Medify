@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./expandedPanel.css";
 // import as React from 'react';
 import Box from "@mui/material/Box";
@@ -9,12 +9,47 @@ import TabPanel from "@mui/lab/TabPanel";
 import leftArrow from "../assets/leftArrow.png";
 import rightArrow from "../assets/rightArrow.png";
 
-export default function ExpandedHospitalCard() {
-  const [value, setValue] = React.useState("1");
+export default function ExpandedHospitalCard({onDateTimeSelect}) {
+  const [value, setValue] = useState("Today");
+  // let [selectedDate, setSelectedDate] = useState('');
+  let [selectedTime, setSelectedTime] = useState('');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    setSelectedTime('')
   };
+
+  const handleTimeClick = (time) => {
+  setSelectedTime(time);
+
+  const today = new Date();
+  let actualDate = "";
+
+  if (value === "Today") {
+    const day = today.getDate();
+    const month = today.toLocaleString("default", { month: "long" });
+    const year = today.getFullYear();
+    actualDate = `${day} ${month} ${year}`;
+  } else if (value === "Tomorrow") {
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+    const day = tomorrow.getDate();
+    const month = tomorrow.toLocaleString("default", { month: "long" });
+    const year = tomorrow.getFullYear();
+    actualDate = `${day} ${month} ${year}`;
+  } else {
+    const customDate = new Date(`${value}, ${today.getFullYear()}`);
+    const day = customDate.getDate();
+    const month = customDate.toLocaleString("default", { month: "long" });
+    const year = customDate.getFullYear();
+    actualDate = `${day} ${month} ${year}`;
+  }
+
+  // Send formatted date and time back to parent
+  onDateTimeSelect(actualDate, time);
+};
+
+
 
   return (
     <Box sx={{ width: "745px", height: "278px", typography: "body1" }}>
@@ -29,6 +64,7 @@ export default function ExpandedHospitalCard() {
             justifyContent: "space-around",
             alignItems: 'center',
           } }}
+          
           >
             <img
               src={leftArrow}
@@ -53,7 +89,7 @@ export default function ExpandedHospitalCard() {
                   <span style={{fontSize: '12px', fontWeight: '400', color: '#01A400'}}>11 Slots Available</span>
                 </div>
               }
-              value="1"
+              value="Today"
             />
             <Tab
               label={
@@ -68,7 +104,7 @@ export default function ExpandedHospitalCard() {
                   <span style={{fontSize: '12px', fontWeight: '400', color: '#01A400'}}>17 Slots Available</span>
                 </div>
               }
-              value="2"
+              value="Tomorrow"
             />
             <Tab
               label={
@@ -83,7 +119,7 @@ export default function ExpandedHospitalCard() {
                   <span style={{fontSize: '12px', fontWeight: '400', color: '#01A400'}}>18 Slots Available</span>
                 </div>
               }
-              value="3"
+              value="Friday, 5 May"
             />
             <img
               src={rightArrow}
@@ -100,72 +136,72 @@ export default function ExpandedHospitalCard() {
 
 
        
-        <TabPanel value="1" sx={{width: '96%', padding: '20px'}}>
+        <TabPanel value="Today" sx={{width: '96%', padding: '20px'}}>
           <div className="todaySlotsContainer">
             <div className="morningSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Morning</p>
-              <button>11:30 AM</button>
+              <button onClick={() => handleTimeClick('11:30 AM')}>11:30 AM</button>
             </div>
             <div className="afternoonSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Afternoon</p>
-              <button>12:00 PM</button>
-              <button>12:30 PM</button>
-              <button>01:30 PM</button>
-              <button>02:00 PM</button>
-              <button>02:30 PM</button>
+              <button onClick={() => handleTimeClick('12:00 PM')}>12:00 PM</button>
+              <button onClick={() => handleTimeClick('12:30 PM')}>12:30 PM</button>
+              <button onClick={() => handleTimeClick('01:30 PM')}>01:30 PM</button>
+              <button onClick={() => handleTimeClick('02:00 PM')}>02:00 PM</button>
+              <button onClick={() => handleTimeClick('02:30 PM')}>02:30 PM</button>
             </div>
             <div className="eveningSlot" style={{ display: "flex",backgroundColor: '#F0F0F5' }}>
               <p>Evening</p>
-              <button>06:00 PM</button>
-              <button>06:30 PM</button>
-              <button>07:00 PM</button>
-              <button>07:30 PM</button>
+              <button onClick={() => handleTimeClick('06:00 PM')}>06:00 PM</button>
+              <button onClick={() => handleTimeClick('06:30 PM')}>06:30 PM</button>
+              <button onClick={() => handleTimeClick('07:00 PM')}>07:00 PM</button>
+              <button onClick={() => handleTimeClick('07:30 PM')}>07:30 PM</button>
             </div>
           </div>
         </TabPanel>
-        <TabPanel value="2" sx={{width: '96%', padding: '20px'}}>
+        <TabPanel value="Tommorrow" sx={{width: '96%', padding: '20px'}}>
           <div className="tommorrowSlotsContainer">
             <div className="morningSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Morning</p>
-              <button>11:30 AM</button>
+              <button onClick={() => handleTimeClick('11:30 AM')}>11:30 AM</button>
             </div>
             <div className="afternoonSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Afternoon</p>
-              <button>12:00 PM</button>
-              <button>12:30 PM</button>
-              <button>01:30 PM</button>
-              <button>02:00 PM</button>
-              <button>02:30 PM</button>
+              <button onClick={() => handleTimeClick('12:00 PM')}>12:00 PM</button>
+              <button onClick={() => handleTimeClick('12:30 PM')}>12:30 PM</button>
+              <button onClick={() => handleTimeClick('01:30 PM')}>01:30 PM</button>
+              <button onClick={() => handleTimeClick('02:00 PM')}>02:00 PM</button>
+              <button onClick={() => handleTimeClick('02:30 PM')}>02:30 PM</button>
             </div>
             <div className="eveningSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Evening</p>
-              <button>06:00 PM</button>
-              <button>06:30 PM</button>
-              <button>07:00 PM</button>
-              <button>07:30 PM</button>
+              <button onClick={() => handleTimeClick('06:00 PM')}>06:00 PM</button>
+              <button onClick={() => handleTimeClick('06:30 PM')}>06:30 PM</button>
+              <button onClick={() => handleTimeClick('07:00 PM')}>07:00 PM</button>
+              <button onClick={() => handleTimeClick('07:30 PM')}>07:30 PM</button>
             </div>
           </div>
         </TabPanel>
-        <TabPanel value="3" sx={{width: '96%', padding: '20px'}}>
+        <TabPanel value="Friday" sx={{width: '96%', padding: '20px'}}>
           <div className="fridaySlotsContainer">
             <div className="morningSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Morning</p>
-              <button>11:30 AM</button>
+              <button onClick={() => handleTimeClick('11:30 AM')}>11:30 AM</button>
             </div>
             <div className="afternoonSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Afternoon</p>
-              <button>12:00 PM</button>
-              <button>12:30 PM</button>
-              <button>01:30 PM</button>
-              <button>02:00 PM</button>
-              <button>02:30 PM</button>
+              <button onClick={() => handleTimeClick('12:00 PM')}>12:00 PM</button>
+              <button onClick={() => handleTimeClick('12:30 PM')}>12:30 PM</button>
+              <button onClick={() => handleTimeClick('01:30 PM')}>01:30 PM</button>
+              <button onClick={() => handleTimeClick('02:00 PM')}>02:00 PM</button>
+              <button onClick={() => handleTimeClick('02:30 PM')}>02:30 PM</button>
             </div>
             <div className="eveningSlot" style={{ display: "flex", backgroundColor: '#F0F0F5' }}>
               <p>Evening</p>
-              <button>06:00 PM</button>
-              <button>06:30 PM</button>
-              <button>07:00 PM</button>
-              <button>07:30 PM</button>
+              <button onClick={() => handleTimeClick('06:00 PM')}>06:00 PM</button>
+              <button onClick={() => handleTimeClick('06:30 PM')}>06:30 PM</button>
+              <button onClick={() => handleTimeClick('07:00 PM')}>07:00 PM</button>
+              <button onClick={() => handleTimeClick('07:30 PM')}>07:30 PM</button>
             </div>
           </div>
         </TabPanel>

@@ -17,7 +17,7 @@ export default function BookingsHeroSection({data, city}) {
             paddingLeft: "142px",
             textAlign: "start",}}>{data.length} medical centers available in {city.toLowerCase()}</h1>
 
-        {/* </p> */}
+  
         <p
           style={{
             display: "flex",

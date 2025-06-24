@@ -4,8 +4,16 @@ import "./myBookingsNavbar.css";
 import TabsNavbar from "../components/tabs";
 // import SearchBox from "./searchBox";
 import MyBookingsSearchBox from '../bookingsPage/myBookingsSearchBox'
+import { useNavigate } from "react-router-dom";
 
 export default function MyBookingsNavbar() {
+
+  let navigate = useNavigate();
+
+  let handleClick = () => {
+    navigate('/');
+  }
+
   return (
     <div className="myBookingsNavbarContainer">
       <div className="myBookingsnavbar">
@@ -17,7 +25,9 @@ export default function MyBookingsNavbar() {
             height: "27px",
             objectFit: "cover",
             objectPosition: "center",
+            cursor: 'pointer'
           }}
+          onClick={handleClick}
         />
         <div>
           <div className="myBookingstabs">
