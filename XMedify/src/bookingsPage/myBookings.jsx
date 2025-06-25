@@ -8,14 +8,13 @@ export default function MyBookings() {
 
   useEffect(() => {
   const bookingData = JSON.parse(localStorage.getItem('bookings'));
-  console.log("Fetched from localStorage:", bookingData);
-
-  if (bookingData) {
+  if (Array.isArray(bookingData)) {
     setData(bookingData); 
   } else {
     setData([]);
   }
 }, []);
+
 
 
   return (

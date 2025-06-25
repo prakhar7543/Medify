@@ -18,8 +18,9 @@
   height: 268px;
   background-color: white;
   border-radius: 15px;
-  position: relative;
-  top: -407px;
+  /* position: absolute;
+  top: 38px;
+  right: 90px; */
 }
 
 .myBookingsofferCard img {

@@ -46,7 +46,11 @@ export default function ExpandedHospitalCard({onDateTimeSelect}) {
   }
 
   // Send formatted date and time back to parent
-  onDateTimeSelect(actualDate, time);
+//  const formattedDisplayDate = actualDate; 
+const isoDate = new Date(actualDate).toISOString().split('T')[0]; // "2025-06-25"
+
+onDateTimeSelect(isoDate, time);  // Send only ISO to parent
+
 };
 
 

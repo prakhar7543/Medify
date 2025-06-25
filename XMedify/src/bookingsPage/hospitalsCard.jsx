@@ -17,13 +17,14 @@ export default function HospitalsCard({ data }) {
   const selected = selectedSlots[id];
 
   if (selected?.date && selected?.time) {
-    const bookingDetails = {
-      hospitalName: hospitalData["Hospital Name"],
-      address: hospitalData["Address"],
-      hospitalType: hospitalData['Hospital Type'],
-      date: selected.date,
-      time: selected.time,
-    };
+   const bookingDetails = {
+  "Hospital Name": hospitalData["Hospital Name"],
+  "Address": hospitalData["Address"],
+  "Hospital Type": hospitalData["Hospital Type"],
+  "Hospital overall rating": hospitalData["Hospital overall rating"],
+  bookingDate: selected.date,
+  bookingTime: selected.time,
+};
 
      let previousBookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
