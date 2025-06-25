@@ -10,7 +10,7 @@ import AboutUs from "../components/heroSectionComponents/tagHero.jsx/aboutUs";
 export default function MyBookingsHeroSection({ data = [] }) {
   return (
     <div className="myBookingsHeroContainer">
-      <div className="myBookingsmainContent">
+      <div className="myBookingsmainContent" style={{height: '100%'}}>
         {data.length > 0 ? (
           data.map((booking, index) => (
             <MyBookingsHospitalsCard key={index} booking={booking} />

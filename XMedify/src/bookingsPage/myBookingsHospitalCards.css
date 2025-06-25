@@ -1,16 +1,19 @@
 .myBookingshospitalCard {
   width: 786px;
-  height: 268px;
-  background-color: white;
+  height: 100%;
+  /* background-color: white; */
   display: flex;
   flex-direction: column;
   border-radius: 15px;
 }
 
 .myBookingscardDetails {
-    display: flex;
-    align-items: center;
-  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  height: 100%;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .myBookingshospitalDetails {
@@ -48,6 +51,3 @@
   font-weight: 700;
   font-size: 14px;
 }
-
-
-

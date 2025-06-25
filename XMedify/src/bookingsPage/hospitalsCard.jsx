@@ -25,7 +25,16 @@ export default function HospitalsCard({ data }) {
       time: selected.time,
     };
 
-    localStorage.setItem("bookings", JSON.stringify(bookingDetails));
+     let previousBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+     if (!Array.isArray(previousBookings)) {
+      previousBookings = previousBookings ? [previousBookings] : [];
+    }
+
+    previousBookings.push(bookingDetails);
+
+    
+    localStorage.setItem("bookings", JSON.stringify(previousBookings));
     // window.location.href = "/myBookings"; // navigate to bookings page
     enqueueSnackbar('Appointment Booked Successfully', {variant: 'success'});
   } else {
