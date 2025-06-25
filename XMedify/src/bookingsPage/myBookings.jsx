@@ -7,15 +7,16 @@ export default function MyBookings() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const bookingData = JSON.parse(localStorage.getItem('bookings'));
-    console.log("Fetched from localStorage:", bookingData);
+  const bookingData = JSON.parse(localStorage.getItem('bookings'));
+  console.log("Fetched from localStorage:", bookingData);
 
-    if (bookingData) {
-      setData([bookingData]); // wrap in array so `.map()` works
-    } else {
-      setData([]);
-    }
-  }, []);
+  if (bookingData) {
+    setData(bookingData); 
+  } else {
+    setData([]);
+  }
+}, []);
+
 
   return (
     <div className="myBookingsContainer">
