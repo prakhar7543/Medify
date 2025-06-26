@@ -60,7 +60,7 @@ export default function MyBookingsHospitalsCard({booking}) {
                  
                   color: "#14BEF0",
                   marginBottom: "unset",
-                }}>{booking['Hospital Name']}</h3>
+                }} className="booking-hospital-name">{booking['Hospital Name']}</h3>
             
               <div className="myBookingsaddress">
                 <p>{booking['Address']}</p>
